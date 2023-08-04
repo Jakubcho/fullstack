@@ -72,7 +72,7 @@ export default function Home() {
             <Link href="/login"><button onClick={() => signIn()}>
               Sign In</button>
             </Link> }
-          {session?.user?.email ? <button onClick={() => signOut()}>Sign Out</button> : <></> }
+          
         </div>
         {session?.user?.email ? 
         <div>
@@ -95,6 +95,7 @@ export default function Home() {
           </ul> 
 
         </div>: <></>}
+        {session?.user?.email ? <button onClick={() => signOut()}>Sign Out</button> : <></> }
       </main>
     </div>
   )
