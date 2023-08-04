@@ -1,15 +1,17 @@
-import nc from "next-connect";
+import nc from 'next-connect';
+import { createRouter } from 'next-connect';
 
-function onError(err, req, res, next) {
-  console.error(err);
-  res.status(500).end(err.toString());
+function onError(err, req,res,next){
+    console.log(error);
+    res.status(500).end(err.toString());
 }
+const router = createRouter({
+    onError:onError,
+    onNoMatch: (req,res) => {
+        res.status(404).send("Page is not found");
+    },
+});
 
-const handler = nc({
-  onError: onError,
-  onNoMatch: (req, res) => {
-    res.status(404).send("Page is not found");
-  },
-})
 
-export default handler
+
+export default router.handler();

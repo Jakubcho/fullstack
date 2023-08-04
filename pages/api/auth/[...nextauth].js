@@ -1,8 +1,8 @@
 import NextAuth  from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials"
 
-import User from "../../../models/user";
-import dbConnect from "../../../utils/dbConnect";
+import User from "@/models/user";
+import dbConnect from "@/utils/dbConnect";
 
 export default NextAuth({
     // Enable JSON Web Tokens since we will not store sessions in our DB
@@ -62,6 +62,6 @@ export default NextAuth({
     },  
   pages: {
     // Here you can define your own custom pages for login, recover password, etc.
-      signIn: '/login', // we are going to use a custom login page (we'll create this in just a second)
+      signIn: '/login',
   },
 })

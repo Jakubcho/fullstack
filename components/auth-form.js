@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/router';
-
+import styles from '../styles/Login.module.css'
 // This goes to our signup API endpoint
 async function createUser(email, password) {
   const response = await fetch('/api/auth/signup', {
@@ -61,18 +61,18 @@ function AuthForm() {
   }
 
   return (
-    <section className='max-w-xl mx-auto my-7'>
+    <section className={styles.container}>
       {!registered ? (
         <>
           <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
           <form onSubmit={submitHandler}>
             <div >
               <label htmlFor='email'>Your Email</label>
-              <input type='email' id='email' required ref={emailInputRef} />
+              <br/><input type='email' id='email' required ref={emailInputRef} />
             </div>
             <div >
               <label htmlFor='password'>Your Password</label>
-              <input
+              <br/><input
                 type='password'
                 id='password'
                 required
@@ -81,6 +81,7 @@ function AuthForm() {
             </div>
             <div className='my-5'>
               <button className='button button-color mr-4'>{isLogin ? 'Login' : 'Create Account'}</button>
+              <br/>
               <button
                 type='button'
 
