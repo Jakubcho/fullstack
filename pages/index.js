@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const url = 'http://localhost:3000/api/task';
+const url = `${process.env.API_URL}/api/task`;
 
 export default function Home() {
   const [task, setTask] = useState('');
