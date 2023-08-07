@@ -1,4 +1,3 @@
-import nc from 'next-connect';
 import { createRouter } from 'next-connect';
 
 function onError(err, req,res,next){

@@ -40,7 +40,6 @@ export default function Home() {
     }
   }
   const handleDelete = async (id) => {
-    console.log('click', id)
     try {     
       const response = await axios.delete(url + '/' + id);
       setTasks(tasks.filter(t => t._id !== id));
@@ -52,7 +51,6 @@ export default function Home() {
     const {data} = await axios.put(url + '/' + id, {
       task
     });
-    console.log(data)
     const orginalTasks = [...tasks];
     const index = orginalTasks.findIndex((t) => t._id === id);
     orginalTasks[index]=data.data;

@@ -39,16 +39,14 @@ input {
   padding: 5px 10px;
   background: rgb(0, 212, 255);
   background: linear-gradient(90deg, rgba(0, 212, 255, 1) 0%, rgba(0, 212, 255, 1) 0%, rgba(0, 255, 209, 1) 72%, rgba(0, 255, 209, 1) 100%);
+  color:black;
+  margin: 10px;
 }
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
 }
-
 form {
   margin: 30px 0;
-}
-input {
-  margin: 10px;
 }
